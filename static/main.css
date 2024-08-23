@@ -1,0 +1,374 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    padding: 0px;
+    font-family: 'Bree Serif';
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.top-navbar{
+    display: flex;
+    background-color: #102139;
+    color: white;
+    align-items: center;
+    height: 50px;
+    
+}
+
+.t-logo{
+    margin-top: 5px;
+    margin-left: -20px;
+}
+.marle{
+    margin-left: 10px;
+}
+.main-bg{
+    background-color: #102139;
+    background-size: cover;
+    padding: 20px;
+}
+
+.main-container{
+    width: 50%;
+    padding-left: 5%;
+    padding-top: 10%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-head{
+    color: rgb(255, 255, 255);
+}
+
+span{
+    color: black;
+}
+
+
+.sub-contianer{
+    height: 220px;
+    width: 420px;
+    background-color: transparent;
+    padding: 15px;
+    color: rgb(6, 6, 6);
+}
+.main-bg-color{
+    background-color: rgb(0, 10, 21);
+}
+
+.c-white{
+    color: white;
+    font-family: "REM", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.s-color{
+    color: aqua;
+    font-family: "REM", monospace;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+
+
+}
+
+.desc-color{
+    color: white;
+    /* font-family: "Teachers", sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.bg-light-effect {
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff, 0 0 30px #00ffff, 0 0 35px #00ffff;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 15px #00e6e6, 0 0 20px #00e6e6, 0 0 25px #00e6e6, 0 0 30px #00e6e6, 0 0 35px #00e6e6, 0 0 40px #00e6e6;
+    }
+  }
+  
+  @-moz-keyframes glow {
+    from {
+      text-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff, 0 0 30px #00ffff, 0 0 35px #00ffff;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 15px #00e6e6, 0 0 20px #00e6e6, 0 0 25px #00e6e6, 0 0 30px #00e6e6, 0 0 35px #00e6e6, 0 0 40px #00e6e6;
+    }
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff, 0 0 30px #00ffff, 0 0 35px #00ffff;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 15px #00e6e6, 0 0 20px #00e6e6, 0 0 25px #00e6e6, 0 0 30px #00e6e6, 0 0 35px #00e6e6, 0 0 40px #00e6e6;
+    }
+  }
+
+.btn-edit{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.color-white{
+    color: white;
+}
+
+
+
+.add-font{
+    font-family: 'Poppins', sans-serif;
+}
+
+.h-size{
+    font-size: 1.5rem;
+}
+
+.apply-flex{
+    display: flex;
+}
+
+
+
+/* section About */
+
+.h-sectionAbout{
+    height: fit-content;
+}
+
+.box{
+    background-color: rgb(0, 19, 40);
+    /* box-shadow: rgb(31 39 58 / 70%) 0px 2px 15px; */
+
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-bottom: 25px;
+    color: white;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.h-bold{
+    font-weight: 600;
+}
+.sub-color{
+    background-color: 
+    #2A3342;
+    border-radius: 10px;
+    border-width: 0px;
+    padding: 5px;
+    color: white;
+}
+.add-btn{
+    background-color: transparent;
+    border-radius: 10px;
+    border-width: 1px;
+    border-color:  white;
+    padding: 5px;
+    color: white;
+    height: auto;
+    width: 150px;
+}
+.color-gray{
+    color: rgb(170, 170, 170);
+}
+
+.color-aqua{
+    color: #00e6e6;
+}
+
+.size-md{
+    font-size: 30px;
+}
+
+.box:hover{
+    box-shadow: rgba(105, 136, 208, 0.7) 0px 2px 20px; 
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+
+/* Image Transition */
+
+.add-trasition{
+    /* animation: animate 3s infinite ease-in-out; */
+    animation: updown 3s infinite ease-in-out;
+}
+
+@keyframes animate{ 
+    0%{
+        height: 400px;
+        
+    }
+    50%{
+        height: 410px;
+    }
+    100%{
+        height: 400px;
+    }
+}
+
+@keyframes updown{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+/* index.html */
+.input-design{
+    
+}
+
+.img-edit{
+    margin-bottom: 20px;
+}
+
+.img1{
+    height: 150px;
+    border-radius: 10px;
+}
+
+.img2{
+    height: 150px;
+    border-radius: 10px;
+}
+.anim-bg-gradient {
+    padding: 0.9em 2em; /* Increased width for padding */
+    border-radius: 0.375em;
+    cursor: pointer;
+    color: white;
+    font-weight: bold; /* Added font-weight for bold text */
+    font-size: 1.2rem; /* Increased font size */
+    background: linear-gradient(120deg, darkmagenta, crimson, orange);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    transition: background-position .5s;
+  }
+
+  .box-color{
+    background-color: rgb(0, 10, 21);
+    border: 2px solid red;
+    width: 25px;
+}
+
+.round-img{
+    border-radius: 10px;
+}
+
+.font2{
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.font1{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal
+}
+
+.font4{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal
+}
+
+
+#output{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    color: white;
+    font-style: normal;
+    font-size:15px;
+
+}
+
+.btn-grad{
+    text-decoration: none;
+}
+
+.btn-grad:hover{
+    text-decoration: none;
+    color: white;
+    box-shadow: 3px 0px 20px orange;
+}
+
+.body-full{
+    height: 100vh;
+}
+.middle-box{
+    margin-left: 170px;
+}
+
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  color: cyan;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+

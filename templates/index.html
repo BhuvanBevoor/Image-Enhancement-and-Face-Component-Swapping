@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Processing Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="top-navbar add-font">
+      <a class="navbar-brand text-white" href="#sectionHome">
+        <img
+          src="{{ url_for('static', filename='logo5.png') }}"
+          width="50"
+          class="d-inline-block align-top mr-3 marle"
+          alt=""
+          loading="lazy"
+        />
+      </a>
+      <h2 class="add-font h-size color-white t-logo">Face Component Swapper</h2>
+    </nav>
+    <div class="main-bg text-center pb-5 body-full">
+      <h1 class="main-head mb-3 mt-2">Face Parts Swapping Online</h1>
+      <p class="main-head mb-5">
+        Select the source and destination images for Swapping...
+      </p>
+      <form
+        action="process"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="d-flex flex-row justify-content-center">
+          <div class="mr-3">
+            <label for="sourceImage" class="main-head">Source Image:</label>
+            <div class="p-3 text-center box sub-color">
+              <img src="{{ url_for('static', filename='face1.svg') }}" alt="" class="img-edit img1">
+              <br>
+              <!-- <button class="add-btn mt-3">Upload Image</button> -->
+              <input
+                type="file"
+                id="sourceImage"
+                name="sourceImage"
+                accept="image/*"
+                class="main-head input-design"
+              />
+            </div>
+          </div>
+          <div class="ml-5">
+            <label for="destinationImage" class="main-head"
+              >Destination Image:</label
+            >
+            <div class="p-3 text-center box sub-color">
+              <img src="{{ url_for('static', filename='face2.svg') }}" alt="" class="img-edit img2">
+              <br>
+              <input
+                type="file"
+                id="destinationImage"
+                name="destinationImage"
+                accept="image/*"
+                class="main-head i2"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 mb-3">
+          <label for="part" class="main-head">Select Part:</label>
+          <select id="part" name="part" class="box sub-color">
+            <option value="nose">Nose</option>
+            <option value="eyes">Eyes</option>
+            <option value="face" selected>Face</option>
+            <option value="mouth">Mouth</option>
+            <option value="eyebrows">Eyebrows</option>
+          </select>
+        </div>
+        <button type="submit" class="anim-bg-gradient btn-grad" id="movenext">Swap</button>
+      </form>
+    </div>
+
+    <script>
+      const image = document.querySelector(".img1")
+      input = document.querySelector("input")
+      //console.log(input)
+
+      input.addEventListener("change", ()=>{
+        image.src = URL.createObjectURL(input.files[0])
+      })
+      const image2 = document.querySelector(".img2")
+      input2 = document.querySelector(".i2")
+      //console.log(input)
+      //console.log(input2)
+
+      input2.addEventListener("change", ()=>{
+        image2.src = URL.createObjectURL(input2.files[0])
+      })
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Processing Project</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+  <nav></nav>
+    <div class="bg-container pt-3 pb-3">
+        <h1 class="head mb-5">Face component swapping</h1>
+        <h2 class="para mb-5">Select the source and destination images for processing...</h2>
+        <form action="/#processing-output" method="post" enctype="multipart/form-data">
+            <div class="d-flex flex-row justify-content-center">
+                <div class="mr-3">
+                    <label for="sourceImage" class="head">Source Image:</label>
+                    <div class="face-box shadow p-3 d-flex flex-column justify-content-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="75px" height="75px" fill="currentColor" class="bi bi-file-richtext" viewBox="0 0 16 16">
+                            <path d="M7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208M5 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+                        </svg>
+                        <br>
+                        <input type="file" id="sourceImage" name="sourceImage" accept="image/*" />
+                    </div>
+                </div>
+                    <div class="ml-5">
+                        <label for="destinationImage" class="head">Destination Image:</label>
+                        <div class="face-box shadow p-3 d-flex flex-column justify-content-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="75px" height="75px" fill="currentColor" class="bi bi-file-richtext" viewBox="0 0 16 16">
+                            <path d="M7 4.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208M5 9a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+                            <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+                          </svg>
+                          <br>
+                                <input type="file" id="destinationImage" name="destinationImage" accept="image/*"/>
+                            </div>
+                    </div>
+            </div>
+            <div class="mt-5">
+                <label for="part">Select Part:</label>
+                <select id="part" name="part" class="shadow">
+                    <option value="nose">Nose</option>
+                    <option value="eyes">Eyes</option>
+                    <option value="face" selected>Face</option>
+                    <option value="mouth">Mouth</option>
+                    <option value="eyebrows">Eyebrows</option>
+                </select>
+            </div>
+                <button type="submit" class="button-sub mt-5" >Process Images</button>
+        </form>
+    </div>
+    <div class="bg-new pt-3">
+                <h1 class="head2">Processing Output:</h1>
+                <pre  id="processing-output"></pre>
+    </div>
+    <script>
+      function refreshProcessingOutput() {
+          fetch("/get_session_output")
+            .then((response) => response.json())
+            .then((data) => {
+              const outputElement = document.getElementById("processing-output");
+              // Check if the output contains "Finished"
+              if (data.output.includes("Finished")) {
+                // Redirect to Final.html
+                window.location.href = "Final.html";
+              } else {
+                // Update the output element
+                outputElement.innerText = data.output;
+              }
+            })
+            .catch((error) => {
+              console.error("Error fetching session output:", error);
+              document.getElementById("processing-output").innerText =
+                "Error retrieving output";
+            });
+      }
+      setInterval(refreshProcessingOutput, 3000); // Refresh every 5 seconds
+
+      refreshProcessingOutput(); // Call on page load
+    </script>
+      <script>
+      const processingOutput = document.getElementById("processing-output");
+      // Add event listener to the button
+      document.querySelector(".button-sub").addEventListener("click", () => {
+        processingOutput.scrollIntoView({ behavior: "smooth" });
+      });
+      </script>
+  </body>
+</html>

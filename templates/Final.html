@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Swap</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://kit.fontawesome.com/d1c2ea8b80.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="top-navbar add-font" style="background-color: rgb(0, 10, 21);">
+    <a class="navbar-brand text-white" href="#sectionHome">
+      <img
+        src="{{ url_for('static', filename='logo5.png') }}"
+        width="50"
+        class="d-inline-block align-top mr-3 marle"
+        alt=""
+        loading="lazy"
+      />
+    </a>
+    <h3 class="add-font h-size color-white t-logo">Face Component Swapper</h3>
+  </nav>
+        <div class="main-bg pt-5 pb-3 main-bg-color h-sectionAbout">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3  text-center">
+                    <h1 class="main-head color-white font1">Acutal Image</h1>
+                    <div class="shadow p-3 mb-3">
+                        <!-- <img src="{{ url_for('static', filename='src2.jpg') }}" alt="Actual Image"   height="200px" fill="currentColor" class="bi bi-file-richtext" viewBox="0 0 16 16"> -->
+                        <img src="{{ url_for('static', filename='src2.jpg') }}" alt="Actual Image"   height="200px" fill="currentColor" class="bi bi-file-richtext round-img" viewBox="0 0 16 16">
+                      <br>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-3  text-center">
+                  <h1 class="main-head color-white font1">Target Image</h1>
+                  <div class="shadow p-3 mb-3">
+                      <img src="{{ url_for('static', filename='dst2.jpg') }}" alt="Target Image"  height="200px"  fill="currentColor" class="bi bi-file-richtext round-img" viewBox="0 0 16 16">
+                  <!--  # <img src="./static/dst.jpg" alt="Target Image" width="75px" height="75px" fill="currentColor" class="bi bi-file-richtext round-img" viewBox="0 0 16 16">-->
+                    <br>
+                  </div>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h1 class="main-head color-white font1">Swapped Raw</h1>
+                    <div class="shadow p-3 mb-3">
+                        <!-- <img src="{{ url_for('static', filename='Swapped.jpg') }}" alt="Swapped Image"  height="300px" class="round-img" > -->
+                        <img src="{{ url_for('static', filename='Swapped.jpg') }}" alt="Actual Image"   height="200px" fill="currentColor" class="bi bi-file-richtext round-img" viewBox="0 0 16 16">
+                      <br>
+                    </div>
+                    <a href="./images/face.png" download><button class="btn btn-primary">Download</button></a>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h1 class="main-head color-white font1">Enhanced Image</h1>
+                    <div class="shadow p-3 mb-3">
+                        <img src="{{ url_for('static', filename='SecondEnhanced.jpg') }}" alt="Enhanced Image"  height="300px" class="round-img" >
+                    </div>
+                    <a href="./images/face.png" download><button class="btn btn-primary">Download</button></a>
+                </div>
+                <div class="col-12 col-md-4 text-center">
+                    <h1 class="main-head color-white font1">Filtered Image</h1>
+                    <div class="shadow p-3 mb-3">
+                        <img src="{{ url_for('static', filename='FinalEnhanced.jpg') }}" alt="Image"  height="300px" class="round-img">
+                      <br>
+                    </div>
+                    <a href="./images/face.png" download><button class="btn btn-primary">Download</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
